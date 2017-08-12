@@ -1,0 +1,21 @@
+<div><title>Share IITK</title></div>
+
+ 
+    <div class="header">
+        <br>
+        <h1 align="center"> Share IIT Kanpur </h1>
+        <h2 align="center"> Everything you need at one place!</h2><br>
+    </div>
+             
+            <div>
+                <nav class="lego">
+                    <md-toolbar>
+                    <button md-button *ngFor="let tab of tabLabels" (click)="switchTab(tab)">  {{tab}}  </button>
+                    </md-toolbar
+                    ></nav> 
+            </div>
+            <div class="body">    
+                <div *ngIf="tabs['Dashboard'].state"><dashboard></dashboard></div>
+                <div *ngIf="tabs['Upload'].state"><upload></upload></div>
+                <div *ngIf="tabs['Search'].state"><search></search></div>
+            </div>

@@ -1,0 +1,1 @@
+export const Semester: string[] = ['Select Semester', 'I', 'II', 'Summer Semester'];

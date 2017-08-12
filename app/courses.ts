@@ -1,0 +1,1 @@
+export const Courses: string[] = ['AE','CE','CHE','CS','DES','ECO','EEE','EM','ENG','ES','ESC','ESO','IME','LIF','LT','MBA','ME','MSE','MSO','MTH','NT','PHI','PHY','PSY','SE','SOC','TA']

@@ -1,0 +1,65 @@
+<style>
+    .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+    .another-file-over-class { border: dotted 3px green; }
+ 
+    html, body { height: 100%; }
+</style>
+<div class="upl">
+<br/>
+<form [formGroup]="uploadForm" class="File" id="File">
+<label for="filetype">Filetype (Required) :</label>
+    <md-select
+        ng-model="detail.filetype"
+        id="filetype"
+        formControlName="filetype"
+        placeholder="Select Filetype">
+            <md-option
+                *ngFor="let filetype of filetypes"
+                [value]="filetype">
+                    {{filetype}}
+            </md-option>
+    </md-select>
+
+&emsp;&emsp;    
+
+<label for="semester">Semester (Required) : </label>
+    <md-select
+        formControlName="semester" placeholder="Select Semester" >
+            <md-option *ngFor="let semester of semesters" [value]="semester" >{{semester}}</md-option>
+    </md-select>
+
+&emsp;&emsp;    
+
+
+<label for="Academic Year">Academic Session (Required) :</label>
+ 
+<md-input-container>
+   <input mdInput type="text"  placeholder="Session, eg-2016-17" id="session" formControlName="session" ng-model="detail.session"  />      
+</md-input-container>
+
+&emsp;&emsp;
+
+<div>
+    <label> Depatrment code (Required) :</label>
+    <md-input-container>
+        <input  type="text" mdInput formControlName="department" [mdAutocomplete]="auto" placeholder="Select Department" required>
+        <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let course of courses" [value]="course">
+            {{ course }}
+        </md-option>
+    </md-autocomplete>   
+    </md-input-container>
+
+<label > Course Code (Required) :</label>
+ <md-input-container>
+    <input mdInput type="text"  placeholder="Course Code, eg-101 or 201" formControlName="course" />      
+ </md-input-container>
+
+<br/>
+<br/>
+<br/>
+</div>
+
+</form>
+</div>

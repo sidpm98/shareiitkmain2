@@ -1,0 +1,49 @@
+<div class="srch">
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    
+    <label for="filename">Filename: </label>
+    <md-input-container>
+        <input  mdInput
+        type="text"
+       
+        id="filename"
+        formControlName="filename"></md-input-container>
+        &emsp;&emsp;
+    
+    <label for="filetype">Filetype: </label>
+
+        <md-select
+        class="form-control"
+        id="filetype"
+        formControlName="filetype">
+            <md-option 
+                *ngFor="let filetype of filetypes"
+                [value]="filetype">
+                    {{filetype}}
+            </md-option>
+    </md-select>
+        &emsp;&emsp;
+    <label for="Course">Course: </label>    
+    <md-input-container>
+    <input  type="text" mdInput formControlName="course" [mdAutocomplete]="auto" placeholder="Select Department" required>
+    <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let course of courses" [value]="course">
+        {{ course }}
+    </md-option>
+    </md-autocomplete>   
+    </md-input-container>
+    &emsp;&emsp;
+    
+    <button 
+        md-raised-button	 
+        type="submit" 
+        [disabled]="!searchForm.valid">Search
+    </button>
+    
+    <div *ngFor="let result of results">
+        
+        <img src="{{result.images.original.url}}">
+    </div>
+
+</form>
+</div>

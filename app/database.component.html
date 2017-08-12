@@ -1,0 +1,14 @@
+<div class="dash">
+<md-list>
+    <h3 md-subheader>Notes</h3>
+    <md-list-item *ngFor="let file of files">
+    <md-icon md-list-icon>note</md-icon>
+    <h4 md-line>Course: {{file.course}}</h4>
+    <p md-line> Type of file: {{file.type}} </p>
+    <p md-line> {{file.session}} || Semester : {{file.semester}} </p>
+    <p md-line> <a href="www.google.com" [style.text-decoration]="none">Click to view</a> </p>
+    <p md-line> <a (click)="onSelect(file)">Download</a> </p>
+  </md-list-item>
+</md-list>
+<download  class="info" [file]="selectedFile" ></download>
+</div>

@@ -1,0 +1,8 @@
+{
+    "detail":[
+          {"filetype": "value" },
+          {"course": "value"},
+          {"session": "value"},
+          {"semester": "value"}
+    ]
+}
